@@ -36,10 +36,16 @@ botui.message.add({
     });
 }).then(function (res) { 
         console.log(res.value);
-        response.push(res.value);   
+        response.push(res.value); 
 }).then(function(){
     return botui.message.add({
-        delay:900,
+        delay:700,
+        loading: true,
+        content:'Got it! Please allow me few seconds for pulling up your order.'
+    });
+}).then(function(){
+    return botui.message.add({
+        delay:1000,
         loading: true,
         content:'I checked your order. Because of a system error, no driver was assigned to your order. We found a nearest driver, and your food can be picked up within five minutes.'
     });
