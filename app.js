@@ -34,6 +34,9 @@ botui.message.add({
         }
           
     });
+}).then(function (res) { 
+        console.log(res.value);
+        response.push(res.value);   
 }).then(function(){
     return botui.message.add({
         delay:900,
@@ -78,5 +81,5 @@ botui.message.add({
 });
 
 function sendcomplete(){
-    window.parent.postMessage({"message": "completed","text":response}, "*");
+    window.parent.postMessage({"message": "completed","text1":response[1],"text2":response[2],"text3":response[3]}, "*");
 };
