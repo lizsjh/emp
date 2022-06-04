@@ -48,13 +48,13 @@ botui.message.add({
         delay:1500,
         loading: true,
         content:'I can help you with that. Could you input your order number below?'
-    });    
+    });
 }).then(function(){
     return botui.action.text({
         action: {
           placeholder: 'Enter your message.'
         }
-    });
+        });
 }).then(function (res) { 
     console.log(res.value);
     response.push(res.value);
@@ -75,7 +75,7 @@ botui.message.add({
         action: {
           placeholder: 'Enter your message.'
         }
-    });
+        });
 }).then(function (res) { 
     console.log(res.value);
     response.push(res.value);
@@ -93,15 +93,9 @@ botui.message.add({
     });    
 }).then(function(){
     return botui.message.add({
-        delay:2000,
+        delay:2500,
         loading: true,
-        content:'Instead, we would like to provide you a 15%-off coupon for your next purchase.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:2000,
-        loading: true,
-        content:'Please hold on while I am adding the coupon to your account.'
+        content:'Instead, we would like to provide you a 15% off coupon for your next purchase. Please hold on while I am adding the coupon to your account.'
     });
 }).then(function(){
     return botui.message.add({
@@ -114,8 +108,9 @@ botui.message.add({
         delay:1500,
         loading: true,
         content:'Again, I really feel your frustration.'
-    });    
+    }); 
 }).then(function(){
+    sendcomplete();
     return botui.message.add({
         delay:2000,
         loading: true,
@@ -124,5 +119,5 @@ botui.message.add({
 });
 
 function sendcomplete(){
-    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2],"text4":response[3]}, "*");
+    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2],"text4":response[3],"text5":response[4]}, "*");
 };
