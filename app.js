@@ -54,7 +54,7 @@ botui.message.add({
         action: {
           placeholder: 'Enter your message.'
         }
-        });
+    });
 }).then(function (res) { 
     console.log(res.value);
     response.push(res.value);
@@ -75,7 +75,7 @@ botui.message.add({
         action: {
           placeholder: 'Enter your message.'
         }
-        });
+    });
 }).then(function (res) { 
     console.log(res.value);
     response.push(res.value);
