@@ -105,16 +105,9 @@ botui.message.add({
     });
 }).then(function(){
     return botui.message.add({
-        delay:1500,
-        loading: true,
-        content:'Again, I really feel your frustration.'
-    }); 
-}).then(function(){
-    sendcomplete();
-    return botui.message.add({
         delay:2000,
         loading: true,
-        content:'Please contact us again if you need further assistance. Bye.'
+        content:'Again, I really feel your frustration. Please contact us again if you need further assistance. Bye.'
     });
 });
 
