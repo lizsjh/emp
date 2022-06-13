@@ -104,6 +104,7 @@ botui.message.add({
         content:'The coupon is successfully added to your account.'
     });
 }).then(function(){
+    sendcomplete();
     return botui.message.add({
         delay:2000,
         loading: true,
