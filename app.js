@@ -4,10 +4,10 @@ const response=new Array();
 botui.message.add({
     delay:1000,
     loading: true,
-    content: 'Hello. This is Alex, and I am a bot created by the customer service department.'
+    content: 'Hello. This is Taylor, and I am a bot created by the customer service department.'
 }).then(function(){
     return botui.message.add({
-        delay:1000,
+        delay:1200,
         loading: true,
         content:'I am handling your request today. What brings you here?'
     });
@@ -25,13 +25,13 @@ botui.message.add({
     return botui.message.add({
         delay:2000,
         loading: true,
-        content:'I do not understand what you said.'
+        content:'I feel your irritation.'
     });
 }).then(function(){
     return botui.message.add({
         delay:3000,
         loading: true,
-        content:'Can you please try again?'
+        content:'I can help you with that. Could you tell me your order number below?'
     });
 }).then(function(){
     return botui.action.text({
@@ -47,61 +47,25 @@ botui.message.add({
     return botui.message.add({
         delay:2000,
         loading: true,
-        content:'I can help you with that. First, could you tell me your order number?'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-          placeholder: 'Enter your message.'
-        }
-        });
-}).then(function (res) { 
-    console.log(res.value);
-    response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:2000,
-        loading: true,
-        content:'Got it. Please allow me few seconds for pulling up your order.'
+        content:'Alright. I am looking up your order. Please give me a moment'
     });
 }).then(function(){
     return botui.message.add({
         delay:4000,
         loading: true,
-        content:'I checked your order. There has been a system error, and no driver was assigned to your order.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:2000,
-        loading: true,
-        content:'We found a nearest driver, and your food can be picked up within five minutes.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:2000,
-        loading: true,
-        content:'What would you like to do next? We can proceed with your order or cancel it.'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-          placeholder: 'Enter your message.'
-        }
-        });
-}).then(function (res) { 
-    console.log(res.value);
-    response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:2000,
-        loading: true,
-        content:'I cannot figure out what your message means.'
+        content:'I found out that there has been a system error, and no driver was assigned to your order.'
     });
 }).then(function(){
     return botui.message.add({
         delay:3000,
         loading: true,
-        content:'Could you respond to the question again?'
+        content:'I genuinely feel your frustration.'
+    });
+}).then(function(){
+    return botui.message.add({
+        delay:3000,
+        loading: true,
+        content:'We found a nearest driver, and your food can be picked up within five minutes. Would you like to proceed your order?'
     });
 }).then(function(){
     return botui.action.text({
@@ -112,17 +76,17 @@ botui.message.add({
 }).then(function (res) { 
     console.log(res.value);
     response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:2000,
-        loading: true,
-        content:'I will process your request. Please hold on for a moment.'
-    });
 }).then(function(){
     return botui.message.add({
         delay:3000,
         loading: true,
         content:'I have processed your request. The issue is resolved.'
+    });
+}).then(function(){
+    return botui.message.add({
+        delay:2500,
+        loading: true,
+        content:'Again, I really feel your disappointment.'
     });
 }).then(function(){
     sendcomplete();
