@@ -80,7 +80,7 @@ botui.message.add({
     return botui.message.add({
         delay:3000,
         loading: true,
-        content:'I have processed your request. The issue is resolved.'
+        content:'I have processed your request.'
     });
 }).then(function(){
     return botui.message.add({
