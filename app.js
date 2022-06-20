@@ -25,7 +25,7 @@ botui.message.add({
     return botui.message.add({
         delay:2000,
         loading: true,
-        content:'I feel your irritation.'
+        content:'I share your annoyance.'
     });
 }).then(function(){
     return botui.message.add({
